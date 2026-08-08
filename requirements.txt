@@ -1,0 +1,6 @@
+PyYAML>=6.0
+reportlab>=4.0
+google-api-python-client>=2.150.0
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.1
+playwright>=1.48.0
