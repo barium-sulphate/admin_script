@@ -3,4 +3,7 @@ __pycache__/
 *.pyc
 credentials.json
 token.json
-events/
+FooBar_Event_Automation_Setup.txt
+test.yaml
+browser_profile/
+generated/

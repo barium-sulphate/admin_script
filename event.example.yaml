@@ -1,0 +1,126 @@
+# Copy this file to events/<your_event>.yaml and fill in real values.
+# The events/ directory is gitignored so real event data stays private.
+
+club:
+  name: "YourClub"
+  email: "yourclub@sc.iiitd.ac.in"
+
+event:
+  name: "Example Event"
+  date: "01-01-2026"
+  start_time: "05:00 PM"
+  end_time: "07:00 PM"
+  venue: "C01"
+  expected_participants: 50
+
+  # Google Form "Type of Event" (pick one):
+  # Fest | Competition | Guest Lecture | Workshop |
+  # Informal Gathering | Cultural Event | Sports Event | Other
+  type: "Competition"
+
+  # Google Form "Target Audience" (tick all that apply):
+  # Institute Students | External Students | Faculty | External Guests
+  target_audience:
+    - "Institute Students"
+
+  # Activity Report spreadsheet column "Type of Event"
+  # (Open to all | IIITD only | Club Members only).
+  audience_scope: "IIITD only"
+
+  description: |
+    Short description of the event.
+
+drive:
+  # 1. Event photos — after-event form "Photos of the Event"
+  #    and Activity Report "Event photos link"
+  event_photos: "https://drive.google.com/drive/folders/YOUR_EVENT_PHOTOS_FOLDER_ID"
+
+  # 2. Timestamped post-event cleanup photos on the after-event form
+  cleanup_photos: "https://drive.google.com/drive/folders/YOUR_CLEANUP_PHOTOS_FOLDER_ID"
+
+  # 3. Where the Activity Report spreadsheet and budget PDFs are stored
+  event_files: "https://drive.google.com/drive/folders/YOUR_EVENT_FILES_FOLDER_ID"
+
+  # Spreadsheet to copy for each event (File → Make a copy of the council template)
+  activity_report_template: "https://docs.google.com/spreadsheets/d/YOUR_TEMPLATE_SPREADSHEET_ID/edit"
+
+organisers:
+  - name: "Lead Organiser"
+    roll_no: "202XXXX"
+    cgpa: "9.00"
+    phone: "9999999999"
+    email: "organiser@iiitd.ac.in"
+
+expected_budget:
+  inflow:
+    institute: 0
+    other_income: 0
+    sponsorship: 0
+    registration_fees: 0
+  outflow:
+    venue_logistics: 0
+    food_hospitality: 0
+    equipment_technical: 0
+    publicity_printing: 0
+    prizes_certificates_merchandise: 0
+    miscellaneous: 0
+
+actual_budget:
+  inflow:
+    institute: 0
+    other_income: 0
+    sponsorship: 0
+    registration_fees: 0
+  outflow:
+    venue_logistics: 0
+    food_hospitality: 0
+    equipment_technical: 0
+    publicity_printing: 0
+    prizes_certificates_merchandise: 0
+    miscellaneous: 0
+
+after_event:
+  participants_attended: 0
+  amount_used: 0
+  cleanup_responsibility:
+    - "Name, RollNo"
+  remarks: "NIL"
+
+forms:
+  before_event:
+    url: "https://docs.google.com/forms/d/e/YOUR_BEFORE_FORM_ID/viewform"
+  after_event:
+    url: "https://docs.google.com/forms/d/e/YOUR_AFTER_FORM_ID/viewform"
+
+emails:
+  activity_report:
+    to:
+      - "someone@iiitd.ac.in"
+    cc: []
+    subject: "Event proposal"
+    body: |
+      Greetings,
+
+      Event Name: {event.name}
+      Event Date: {event.date}
+      Event Time: {event.start_time} to {event.end_time}
+      Proposed Venue: {event.venue}
+      Expected Number of Participants: {event.expected_participants}
+
+      Best regards,
+      Team {event.name}
+    attachments: []
+
+  room_booking:
+    to:
+      - "facilities@iiitd.ac.in"
+    cc: []
+    subject: "Room Booking"
+    body: |
+      Good Evening,
+
+      We want to book {event.venue} on {event.date}
+      from {event.start_time} to {event.end_time}.
+
+      Best regards,
+    attachments: []

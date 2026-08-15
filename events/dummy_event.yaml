@@ -1,0 +1,145 @@
+club:
+  name: "Dummy Club"
+  email: "dummy@sc.iiitd.ac.in"
+
+event:
+  name: "Test Event"
+  date: "15-08-2026"
+  start_time: "05:00 PM"
+  end_time: "07:00 PM"
+  venue: "C320"
+  expected_participants: 10
+
+  # Google Form "Type of Event" (pick one):
+  # Fest | Competition | Guest Lecture | Workshop |
+  # Informal Gathering | Cultural Event | Sports Event | Other
+  type: "Competition"
+
+  # Google Form "Target Audience" (tick all that apply):
+  # Institute Students | External Students | Faculty | External Guests
+  target_audience:
+    - "Institute Students"
+
+  # Activity Report spreadsheet column "Type of Event"
+  # (Open to all | IIITD only | Club Members only).
+  # If omitted, this is inferred from target_audience.
+  audience_scope: "IIITD only"
+
+  description: |
+    This is a test event configuration for the Event Automation
+    system. This event is being used to verify the budget PDF generation,
+    Google Forms integration, Gmail draft creation, and Activity Report
+    integration.
+
+drive:
+  # 1. Event Photos on the after-event Google Form AND Activity Report column G
+  event_photos: "https://drive.google.com/drive/folders/PASTE_EVENT_PHOTOS_FOLDER_ID"
+
+  # 2. Timestamped post-event cleanup photos on the after-event Google Form
+  cleanup_photos: "https://drive.google.com/drive/folders/PASTE_CLEANUP_PHOTOS_FOLDER_ID"
+
+  # 3. Where the Activity Report spreadsheet and generated budget PDFs go
+  #    (expected breakdown + actual budget breakdown; organisers PDF is skipped)
+  event_files: "https://drive.google.com/drive/folders/PASE_EVENT_FOLDER"
+
+  # Spreadsheet copied for each event's Activity Report
+  activity_report_template: "https://docs.google.com/spreadsheets/d/PASTE_TEMPLATE"
+
+organisers:
+  - name: "Test Organiser"
+    roll_no: "2024001"
+    cgpa: "8.0"
+    phone: "9999999999"
+    email: "test@example.com"
+
+expected_budget:
+  inflow:
+    institute: 1000
+    other_income: 0
+    sponsorship: 0
+    registration_fees: 0
+
+  outflow:
+    venue_logistics: 0
+    food_hospitality: 500
+    equipment_technical: 200
+    publicity_printing: 100
+    prizes_certificates_merchandise: 100
+    miscellaneous: 100
+
+  notes:
+    purpose: "Testing expected budget generation"
+    remarks: "Test configuration only"
+
+actual_budget:
+  inflow:
+    institute: 1000
+    other_income: 0
+    sponsorship: 0
+    registration_fees: 0
+
+  outflow:
+    venue_logistics: 0
+    food_hospitality: 450
+    equipment_technical: 200
+    publicity_printing: 80
+    prizes_certificates_merchandise: 100
+    miscellaneous: 50
+
+  notes:
+    purpose: "Testing actual budget generation"
+    remarks: "Test configuration only"
+
+after_event:
+  participants_attended: 10
+  amount_used: 880
+  cleanup_responsibility:
+    - "Test Organiser, 2024001"
+  remarks: "Test event"
+
+forms:
+  before_event:
+    url: "https://docs.google.com/forms/d/e/1FAIpQLScOJcwsowqBFbvlqlEwjNEnpWuPUjgR9dKTBpEo0hnvo7DD4w/viewform"
+
+  after_event:
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSe0R6ESLLwKeLsS6e2xp56gbTFfEZLb60AztnFxQWmow3nctw/viewform"
+
+emails:
+  activity_report:
+    to:
+      - "dummy.balliwar@gmail.com"
+    cc: []
+    subject: "Test Event - Proposal"
+    body: |
+      Greetings,
+
+      This is a test email for the Event Automation.
+
+      Event Name: {event.name}
+      Event Date: {event.date}
+      Event Time: {event.start_time} to {event.end_time}
+      Proposed Venue: {event.venue}
+      Expected Number of Participants: {event.expected_participants}
+
+      Best regards,
+      Team Dummy
+    attachments: []
+
+  room_booking:
+    to:
+      - "dummy@iiitd.ac.in"
+    cc: []
+    subject: "Test Room Booking"
+    body: |
+      Good Evening,
+
+      This is a test room booking email for:
+      {event.name}
+
+      Date: {event.date}
+      Venue: {event.venue}
+      Time: {event.start_time} to {event.end_time}
+
+      Best regards,
+      Team Dummy
+    attachments: []
