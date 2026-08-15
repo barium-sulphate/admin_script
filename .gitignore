@@ -4,6 +4,7 @@ __pycache__/
 credentials.json
 token.json
 FooBar_Event_Automation_Setup.txt
+events/
 test.yaml
 browser_profile/
 generated/
